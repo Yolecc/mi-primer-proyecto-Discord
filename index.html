@@ -6,6 +6,7 @@
     <title>Discord | Your Place to Talk and Hang Out</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" href="favicon.ico" type="image/x-icon"> 
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
    <header class="text-white"  style="background-color: rgb(88, 101, 242);">
@@ -14,28 +15,40 @@
            <img class="min-w-28" src="https://logos-world.net/wp-content/uploads/2020/12/Discord-Symbol.png" alt="Discord logo"       
            style="height: 40px; width: 134px;"
            />
+              </a>
+        <!-- Botón hamburguesa visible solo en móviles -->
+  <button id="menu-btn" class="md:hidden block">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+  </button>
 
-         </a>
-             <div class=" flex [&>a]:p-3 [&>a]:mx-2 [&>a:hover]:underline [&>a]:font-medium">
-                <a href="#">Download</a> 
-                <a href="#">Nitro</a>
-                <a href="#">Discover</a>
-                <a href="#">Safety</a>
-                <a href="#">Support</a>
-                <a href="#">Blog</a>
-                <a href="#">Careers</a>
-
-             </div>
-             <div class="flex justify-end" style="height: 38px; width: 116px;">
+      
+             <div id="nav-links" class="opacity-0 scale-95 pointer-events-none transition-all duration-300 ease-in-out
+  md:opacity-100 md:scale-100 md:pointer-events-auto md:flex md:flex-row
+  flex-col absolute top-16 right-4 bg-white text-black rounded-lg shadow-lg p-4 gap-2 z-50
+  md:static md:bg-transparent md:text-white md:shadow-none md:p-0 md:gap-4
+  [&>a]:p-2 [&>a]:mx-2 [&>a:hover]:underline [&>a]:font-medium">
+  
+  <a href="#">Download</a>
+  <a href="#">Nitro</a>
+  <a href="#">Discover</a>
+  <a href="#">Safety</a>
+  <a href="#">Support</a>
+  <a href="#">Blog</a>
+  <a href="#">Careers</a>
+</div>  
+ <div class="flex justify-end" style="height: 38px; width: 116px;">
                 <button class="btn" >Login</button>
-             </div>               
+             </div>              
         </nav>
    </header>
    <main>
       <section style="background-color: rgb(88, 101, 242);">
-         <article class="mx-10 py-28">
+         <article class="px-4 md:px-10 py-20 md:py-28">
             <div class="max-w-[800px] mx-auto pt-5  text-white text-center">
-                   <h1 class="mx-10 text-6xl font-black mb-10">IMAGINA UN LUGAR...</h1>
+                   <h1 class="mx-10 text-4xl font-black mb-10">IMAGINA UN LUGAR...</h1>
                         <p class="leading-7 text-xl mb-5 mx-2">
                            ... en el que puedas formar parte de un club escolar,
                            un grupo de jugadores o una comunidad mundial de arte.
@@ -44,7 +57,7 @@
                            a menudo sea fácil.
                         </p>
                      </div>
-                        <div class="flex justify-center space-x-6">
+                        <div class="flex flex-col md:flex-row items-center justify-center gap-4 mt-6">
                               <a href="" class=" flex bg-white font-medium text-black text-xl px-7 py-3.5 rounded-full">
                                  <svg class="w-6 h-6 text-gray-800 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                  width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -141,19 +154,19 @@
                      <li class="mb-10">English</li>
                      <li class="flex justify-center space-x-2  gap-3 ">
                         <a href="https://x.com/" target="blank">
-                           <img  src="./img/Twitter-X-logo-Vector-01-2.jpg" alt="" />
+                           <img src="./img/twitter-logo-24.png" alt=""/> 
                         </a>
                         <a href="https://www.instagram.com/" target="blank">
-                           <img src="./img/instagram.png" alt="" />
+                           <img src="./img/instagram-alt-logo-24.png" alt=""/> 
                         </a>
                         <a href="https://www.facebook.com/" target="blank">
-                           <img src="./img/face.png" alt="" />
+                           <img src="./img/facebook-circle-logo-24.png" alt=""/>
                         </a>
                         <a href="https://www.youtube.com/discord" target="blank">
-                           <img src="./img/youtube.png" alt="" />
+                           <img src="./img/youtube-logo-24.png" alt=""/>  
                         </a>
                         <a href="https://tiktok.com/" target="blank">
-                           <img src="./img/TikTok.png" alt="TT" />
+                           <img src="./img/tiktok-logo-24.png" alt=""/>
                         </a>
                      </li>
                      
@@ -281,6 +294,23 @@
              </div>
       </div>
    </footer>
+   <script>
+  const menuBtn = document.getElementById('menu-btn');
+  const navLinks = document.getElementById('nav-links');
 
+  let isOpen = false;
+
+  menuBtn.addEventListener('click', () => {
+    isOpen = !isOpen;
+
+    if (isOpen) {
+      navLinks.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
+      navLinks.classList.add('opacity-100', 'scale-100', 'pointer-events-auto');
+    } else {
+      navLinks.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+      navLinks.classList.remove('opacity-100', 'scale-100', 'pointer-events-auto');
+    }
+  });
+</script>
 </body>
 </html>
